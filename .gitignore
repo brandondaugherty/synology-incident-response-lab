@@ -1,0 +1,13 @@
+# Raw evidence must remain private.
+*.html
+*.log
+*.csv
+*.tsv
+raw/
+private/
+
+# Local analysis output and environment files.
+output/
+.env
+__pycache__/
+*.pyc

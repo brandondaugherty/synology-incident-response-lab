@@ -1,0 +1,51 @@
+{
+  "evidence_window": {
+    "first_event": "2025-07-24 02:55:11",
+    "last_event": "2026-10-16 11:48:39",
+    "parsed_rows": 9179
+  },
+  "auto_block_events": {
+    "total": 2052,
+    "ssh": 2047,
+    "dsm": 5,
+    "unique_source_ips": 2052,
+    "unique_24_networks": 1648,
+    "peak_daily_count": 57,
+    "peak_date": "2026-03-01"
+  },
+  "monthly_counts": {
+    "2025-07": 81,
+    "2025-08": 200,
+    "2025-09": 250,
+    "2025-10": 92,
+    "2025-11": 98,
+    "2025-12": 320,
+    "2026-02": 197,
+    "2026-03": 250,
+    "2026-04": 30,
+    "2026-06": 6,
+    "2026-07": 158,
+    "2026-08": 111,
+    "2026-09": 161,
+    "2026-10": 98
+  },
+  "highest_volume_network_tokens": [
+    {"network": "NET-01", "events": 112},
+    {"network": "NET-02", "events": 53},
+    {"network": "NET-03", "events": 30},
+    {"network": "NET-04", "events": 15},
+    {"network": "NET-05", "events": 13}
+  ],
+  "passive_enrichment_summary": {
+    "representative_networks_reviewed": 5,
+    "countries_observed": ["DE", "NL"],
+    "network_owners_observed": ["AS198364 BANATSYNC SRL", "AS197170 TechTies Inc."],
+    "representatives_with_otx_pulses": 4,
+    "note": "Enrichment is contextual and is not actor attribution. Raw indicators are withheld."
+  },
+  "assessment": {
+    "successful_authentication_observed_in_export": false,
+    "compromise_confirmed": false,
+    "most_likely_explanation": "Persistent automated authentication scanning against Internet-reachable services"
+  }
+}

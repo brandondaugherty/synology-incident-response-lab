@@ -1,0 +1,32 @@
+title: Synology Repeated Authentication Source Automatically Blocked
+id: homelab-synology-auto-block-001
+status: experimental
+description: Detects Synology DSM System events indicating that Auto Block blocked a source through SSH or DSM.
+author: Brandon Daugherty
+date: 2026-10-16
+logsource:
+  product: synology
+  service: dsm_system
+detection:
+  selection:
+    level: Warning
+    event|re: '^Host \[[0-9a-fA-F:.]+\] was blocked via \[(SSH|DSM)\]\.$'
+  condition: selection
+fields:
+  - timestamp
+  - service
+  - source_ip
+falsepositives:
+  - Authorized testing that intentionally triggers Auto Block
+  - Misconfigured trusted clients repeatedly using stale credentials
+level: medium
+tags:
+  - attack.credential_access
+  - attack.t1110
+  - attack.t1133
+response:
+  - Preserve the source event and relevant time window
+  - Review successful authentications before and after the block
+  - Check for account, privilege, MFA, and firewall changes
+  - Enrich only public source indicators using passive sources
+  - Escalate when a success follows failures or a privileged account is involved
